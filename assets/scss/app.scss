@@ -1,0 +1,175 @@
+// Custom bootstrap variable overrides
+@import "bootstrap_variable_overrides";
+
+// Bootstrap and its default variables
+@import "bootstrap/bootstrap";
+
+// Your style
+@import "variables";
+@import "mixins";
+@import "general";
+@import "layout";
+@import "module";
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600&display=swap');
+
+$primary : #8c7bd1;
+$bg-light : #f5f7fb;
+$text-dark : #5c5c6e;
+$text-orange : #ebc481;
+
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.navbar{
+    background: $bg-light;
+    &-light .navbar-nav .nav-link{
+        color: $text-dark;
+        font-weight: 500;
+    }
+    &-nav.sub-navbar .login-btn{ 
+        max-width: 150px;
+        text-align: center;
+        a{
+            background-color: $primary;
+            color: #fff;
+            padding: 8px 45px 8px 45px;
+            border-radius: 35px;
+            @media (min-width:992px){
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.hero{
+    background: rgba(140, 123, 209, 0.9);
+    background-size: cover;
+    padding: 50px;
+    &-content {
+        h1{
+            color: $text-orange;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        p{
+            color: #fff;
+            font-size: 1.2rem;
+        }
+        @media (min-width: 992px) {
+            width: 40%;
+        }
+    }
+    &-services {
+        margin-top: 50px;
+        .service {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            &-content{
+                position: absolute;
+                width: 100%;
+                text-align: center;
+                transition: bottom 1s ease 0.2s;
+                bottom: -70px;
+                h2{
+                    color: $text-orange;
+                    font-weight: 600;
+                    font-size: 1.8rem;
+                    margin-bottom: 20px;
+                }
+                a{
+                    background-color: $primary;
+                    color: #fff;
+                    padding: 8px 45px 8px 45px;
+                    border-radius: 35px;
+                }
+            }
+            margin-bottom: 30px;
+            &.yoga{
+                transition-delay: 0.4s;
+            }
+            &.meditation{
+                transition-delay: 0.6s;
+            }
+            &.nutrition{
+                transition-delay: 0.8s;
+            }
+            &.therapy{
+                margin-bottom: 0;
+                transition-delay: 1.0s;
+            }
+            transition: opacity 1s ease 0s;
+            opacity: 0;
+        }
+        @media (min-width: 767px) {
+            display: grid;
+            grid-template-columns: 0.7fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 10px 10px;
+            grid-template-areas: ".service-col";
+            .service{
+                margin-bottom: 0;
+                &-content {
+                    h2{
+                        font-size: 1.2rem;
+                    }
+                    a{
+                        padding: 8px 25px 8px 25px;
+                    }
+                }
+                &.yoga{
+                    img{
+                        height: 100%;
+                    }
+                }
+                &.yoga,&.meditation{
+                    .service-content{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 0 20px;
+                        h2{
+                            margin-bottom: 0;
+                        }
+                        a{
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+            .service-col{
+                display: grid;
+                gap: 10px 10px;
+            }
+            .service-row{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 10px 10px;
+            }
+        }
+        @media (min-width: 992px) {
+            width: 60%;
+            padding-left: 30px;
+        }
+        @media (min-width: 1200px) {
+            padding-left: 90px;
+        }
+    }
+    &.loaded {
+        .hero-services .service{
+            opacity: 1;
+            .service-content{
+                bottom: 20px;
+            }
+        }
+    }
+}
