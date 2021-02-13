@@ -10917,8 +10917,10 @@ img {
 .hero-services .service-content a {
   background-color: #8c7bd1;
   color: #fff;
-  padding: 8px 45px 8px 45px;
+  padding: 7px 25px 7px 25px;
   border-radius: 35px;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
 .hero-services .service.yoga {
@@ -10955,9 +10957,6 @@ img {
   }
   .hero-services .service-content h2 {
     font-size: 1.2rem;
-  }
-  .hero-services .service-content a {
-    padding: 8px 25px 8px 25px;
   }
   .hero-services .service.yoga img {
     height: 100%;
